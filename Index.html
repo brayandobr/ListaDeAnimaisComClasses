@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Animais</title>
+</head>
+<body>
+    <h1>Lista de Animais do Brayan</h1>
+    <div id="animal-list"></div>
+    <script>
+        class Animal {
+    constructor(nome, especie, peso) {
+        this.nome = nome;
+        this.especie = especie;
+        this.peso = peso;
+    }
+
+    getAnimalInfo() {
+        return `
+            <div class="animal">
+                <h2>${this.nome}</h2>
+                <p>Espécie: ${this.especie}</p>
+                <p>Peso: ${this.peso} kg</p>
+            </div>
+        `;
+    }
+}
+
+const animais = [
+    new Animal('Gato', 'Felis catus', 4),
+    new Animal('Cachorro', 'Canidae ', 6),
+    new Animal('Periquito', 'Psitacídeos', 0.40),
+    new Animal('Papagaio', 'Strigops habroptilus', 2),
+];
+
+const animalList = document.getElementById('animal-list');
+
+animais.forEach(animal => {
+    animalList.innerHTML += animal.getAnimalInfo();
+});
+    </script>
+</body>
+</html>
+<style>
+    body{
+        font-family: monospace;
+        background-color: darkslategrey;
+        color: whitesmoke;
+        text-align: center;
+    }
+    h1{
+        color: rgb(120, 175, 120);
+        margin-top: 10%;
+        margin-bottom: 5%;
+    }
+    /*o papagaio falou que a Rafa é a melhor professora do Mascarenhas e que se eu passar ela vai ganhar um bom bom, hein*/
+</style>
